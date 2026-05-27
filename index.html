@@ -441,11 +441,7 @@ src="https://www.facebook.com/tr?id=1002113512276303&ev=PageView&noscript=1"
 
         <input type="hidden" id="interesse" name="interesse" />
 
-        <button 
-  class="button" 
-  type="submit"
-  onclick="fbq('track', 'Lead', {content_name: 'Webinar iFood - Clique no botão WhatsApp'});"
->
+       <button class="button" type="submit">
   Entrar no grupo do WhatsApp
 </button>
 
@@ -459,57 +455,59 @@ src="https://www.facebook.com/tr?id=1002113512276303&ev=PageView&noscript=1"
       </div>
     </section>
   </main>
+<script>
+  const googleSheetsUrl = "https://script.google.com/macros/s/AKfycby-Vf5wD8iUgVH53BeMFNVAJF8DBtcFc3OZme6HkORIHtuObx-Fz6MY-Hw5T_TnxeDG/exec";
+  const whatsappGroupLink = "https://chat.whatsapp.com/BayOQqn0IolKucXHcjfm7t?s=sw&p=a&mlu=1";
 
-  <script>
-    const whatsappGroupLink = "https://chat.whatsapp.com/BayOQqn0IolKucXHcjfm7t?s=sw&p=a&mlu=1";
+  const optionButtons = document.querySelectorAll(".option-button");
+  const interesseInput = document.getElementById("interesse");
 
-    const optionButtons = document.querySelectorAll(".option-button");
-    const interesseInput = document.getElementById("interesse");
+  optionButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      button.classList.toggle("active");
 
-    optionButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        button.classList.toggle("active");
+      const selectedOptions = Array.from(document.querySelectorAll(".option-button.active"))
+        .map((item) => item.dataset.value);
 
-        const selectedOptions = Array.from(document.querySelectorAll(".option-button.active"))
-          .map((item) => item.dataset.value);
-
-        interesseInput.value = selectedOptions.join(", ");
-      });
+      interesseInput.value = selectedOptions.join(", ");
     });
+  });
 
-    document.getElementById("leadForm").addEventListener("submit", function(event) {
-      event.preventDefault();
+  document.getElementById("leadForm").addEventListener("submit", function(event) {
+    event.preventDefault();
 
-      const nome = document.getElementById("nome").value.trim();
-      const telefone = document.getElementById("telefone").value.trim();
-      const faturamento = document.getElementById("faturamento").value;
-      const interesse = document.getElementById("interesse").value;
+    const nome = document.getElementById("nome").value.trim();
+    const telefone = document.getElementById("telefone").value.trim();
+    const faturamento = document.getElementById("faturamento").value;
 
-      if (!nome || !telefone || !faturamento) {
-        alert("Preencha nome, telefone e faturamento para participar.");
-        return;
-      }
+    if (!nome || !telefone || !faturamento) {
+      alert("Preencha nome, telefone e faturamento para participar.");
+      return;
+    }
 
-      const leadData = {
+    if (typeof fbq !== "undefined") {
+      fbq("track", "Lead", {
+        content_name: "Webinar iFood - Formulario enviado"
+      });
+    }
+
+    fetch(googleSheetsUrl, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
         nome: nome,
         telefone: telefone,
-        faturamento: faturamento,
-        interesse: interesse,
-        dataCadastro: new Date().toISOString()
-      };
-
-      localStorage.setItem("lead_gruppu", JSON.stringify(leadData));
-
-      if (typeof fbq !== "undefined") {
-  fbq("track", "Lead", {
-    content_name: "Webinar iFood - Entrou no grupo WhatsApp"
-  });
-}
-
-setTimeout(function() {
-  window.location.href = whatsappGroupLink;
-}, 700);
+        faturamento: faturamento
+      })
     });
-  </script>
+
+    setTimeout(function() {
+      window.location.href = whatsappGroupLink;
+    }, 1000);
+  });
+</script>
 </body>
 </html>
