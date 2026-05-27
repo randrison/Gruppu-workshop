@@ -441,9 +441,13 @@ src="https://www.facebook.com/tr?id=1002113512276303&ev=PageView&noscript=1"
 
         <input type="hidden" id="interesse" name="interesse" />
 
-        <button class="button" type="submit">
-          Entrar no grupo do WhatsApp
-        </button>
+        <button 
+  class="button" 
+  type="submit"
+  onclick="fbq('track', 'Lead', {content_name: 'Webinar iFood - Clique no botão WhatsApp'});"
+>
+  Entrar no grupo do WhatsApp
+</button>
 
         <p class="privacy">
           Após preencher, você será direcionado para o grupo oficial no WhatsApp.
