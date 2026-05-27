@@ -500,7 +500,15 @@ src="https://www.facebook.com/tr?id=1002113512276303&ev=PageView&noscript=1"
 
       localStorage.setItem("lead_gruppu", JSON.stringify(leadData));
 
-      window.location.href = whatsappGroupLink;
+      if (typeof fbq !== "undefined") {
+  fbq("track", "Lead", {
+    content_name: "Webinar iFood - Entrou no grupo WhatsApp"
+  });
+}
+
+setTimeout(function() {
+  window.location.href = whatsappGroupLink;
+}, 700);
     });
   </script>
 </body>
