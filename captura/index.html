@@ -137,7 +137,8 @@
       if(!selected.length){error.classList.add("show");form.querySelector("fieldset").scrollIntoView({behavior:"smooth",block:"center"});return}
       const button=form.querySelector(".submit");button.disabled=true;button.firstElementChild.textContent="ABRINDO O GRUPO...";
       if(typeof fbq!=="undefined")fbq("track","Lead",{content_name:"Captura Gruppu - Analise ao vivo"});
-      fetch(googleSheetsUrl,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/json"},body:JSON.stringify({nome:form.nome.value.trim(),telefone:form.telefone.value.trim(),faturamento:form.faturamento.value,interesse:selected.join(", "),origem:"/captura"})});
+      const origem=new URLSearchParams(window.location.search).get("origem")||"/captura";
+      fetch(googleSheetsUrl,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/json"},body:JSON.stringify({nome:form.nome.value.trim(),telefone:form.telefone.value.trim(),faturamento:form.faturamento.value,interesse:selected.join(", "),origem})});
       setTimeout(()=>{window.location.href=whatsappGroupLink},900);
     });
   </script>
