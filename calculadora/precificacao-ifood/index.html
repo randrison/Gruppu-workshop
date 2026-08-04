@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Calculadora iFood grátis: preço, taxas e lucro | Gruppu</title>
-  <meta name="description" content="Use a calculadora de precificação iFood para descobrir quanto cobrar considerando comissão, taxa online, entrega, campanhas e margem de lucro.">
+  <meta name="description" content="Use a calculadora de precificação iFood para descobrir quanto cobrar considerando CMV, lucro desejado, comissão, pagamento online, entrega e promoções.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://gruppu.com.br/calculadora/precificacao-ifood/">
   <meta property="og:title" content="Calculadora iFood grátis: calcule preço, taxas e lucro">
-  <meta property="og:description" content="Simule o preço de venda no iFood considerando comissão, pagamento online, entrega e campanhas.">
+  <meta property="og:description" content="Simule o preço no iFood considerando CMV, lucro desejado, taxas, entrega e promoções.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://gruppu.com.br/calculadora/precificacao-ifood/">
   <meta name="twitter:card" content="summary">
@@ -30,10 +30,11 @@
     "@context":"https://schema.org",
     "@type":"FAQPage",
     "mainEntity":[
-      {"@type":"Question","name":"Como calcular o preço de venda no iFood?","acceptedAnswer":{"@type":"Answer","text":"Comece pelo preço que já cobre o custo do produto e a margem desejada. Depois, acrescente comissão do plano, taxa de pagamento online, participação em campanhas e eventuais custos de entrega."}},
+      {"@type":"Question","name":"Como calcular o preço de venda no iFood?","acceptedAnswer":{"@type":"Answer","text":"Informe separadamente o custo do produto (CMV) e quanto deseja lucrar em cada venda. Depois, selecione as taxas, a entrega e o investimento em promoções. A calculadora encontra o preço necessário para preservar o lucro desejado."}},
       {"@type":"Question","name":"Quanto o iFood cobra do restaurante?","acceptedAnswer":{"@type":"Answer","text":"As páginas oficiais do iFood apresentam como referência comissão de 12% no Plano Básico e 23% no Plano Entrega, além de 3,2% para pagamentos processados no aplicativo. As condições podem variar por contrato, região e modalidade."}},
       {"@type":"Question","name":"Posso vender mais caro no iFood do que no balcão?","acceptedAnswer":{"@type":"Answer","text":"O preço no aplicativo pode precisar ser diferente para absorver custos específicos do canal, mas também deve ser competitivo e coerente com a percepção de valor do cliente."}},
-      {"@type":"Question","name":"A calculadora inclui comissão, pagamento online e promoções?","acceptedAnswer":{"@type":"Answer","text":"Sim. Você escolhe o plano, ativa ou desativa o pagamento online, informa o custo médio de entrega e adiciona o percentual de campanhas que incide sobre a venda."}},
+      {"@type":"Question","name":"A calculadora inclui comissão, pagamento online e promoções?","acceptedAnswer":{"@type":"Answer","text":"Sim. Você escolhe o plano, ativa ou desativa o pagamento online, informa quanto a loja paga de entrega e seleciona a promoção do iFood ou um valor personalizado."}},
+      {"@type":"Question","name":"Como informar Campanha Inteligente, cupom e iFood Anúncios?","acceptedAnswer":{"@type":"Answer","text":"Escolha a promoção e use o custo que sua loja realmente banca por pedido. O iFood Anúncios é um investimento por visita ao cardápio e deve ser analisado separadamente."}},
       {"@type":"Question","name":"Como saber se estou tendo lucro no iFood?","acceptedAnswer":{"@type":"Answer","text":"Compare o valor líquido estimado com o custo completo do pedido: ingredientes, embalagem, impostos, mão de obra e despesas da operação."}},
       {"@type":"Question","name":"Esta calculadora substitui as taxas do meu contrato?","acceptedAnswer":{"@type":"Answer","text":"Não. Ela é uma ferramenta educativa baseada em referências públicas. Confira as taxas, mensalidades e regras vigentes no Portal do Parceiro e no contrato da sua loja."}}
     ]
@@ -42,18 +43,17 @@
 
   <style>
     :root{--ink:#0a0a0a;--panel:#151515;--paper:#efede7;--red:#ec2027;--muted:#858585;--line:#2b2b2b}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:#fff;font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}button,input,select{font:inherit}a{transition:.18s ease}
+    *{box-sizing:border-box}[hidden]{display:none!important}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:#fff;font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}button,input,select{font:inherit}a{transition:.18s ease}
     .wrap{width:min(1120px,calc(100% - 48px));margin-inline:auto}.header{height:86px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #272727}.brand{color:#fff;text-decoration:none;font-size:24px;font-weight:900;letter-spacing:-.7px}.brand b{color:var(--red)}.header nav{display:flex;gap:24px}.header nav a{color:#8d8d8d;font-size:11px;font-weight:700;text-decoration:none}.header nav a:last-child{color:#fff}
     .hero{padding:64px 0 45px;display:grid;grid-template-columns:1fr 170px;gap:45px;align-items:end}.eyebrow,.section-label{color:var(--red);font:800 9px monospace;letter-spacing:.15em}.hero h1{max-width:980px;margin:18px 0;font-size:clamp(42px,5.3vw,68px);line-height:.98;letter-spacing:-.06em}.hero h1 em{color:var(--red);font-style:normal}.hero p{max-width:670px;margin:0;color:#969696;font-size:15px;line-height:1.6}.stamp{width:160px;height:160px;padding:20px;display:grid;place-content:center;border:1px solid #343434;border-radius:50%;transform:rotate(-7deg)}.stamp strong{color:var(--red);font-size:42px;line-height:1}.stamp span{margin-top:7px;color:#777;font-size:9px;line-height:1.4}
     .switcher{margin-bottom:15px;display:flex;gap:7px}.switcher a{min-height:43px;padding:0 15px;display:flex;align-items:center;border:1px solid var(--line);border-radius:99px;color:#888;text-decoration:none;font-size:11px;font-weight:700}.switcher a.active{background:#fff;border-color:#fff;color:#111}
-    .calculator{margin-bottom:60px;display:grid;grid-template-columns:1fr 1fr;background:var(--paper);color:#111;border-radius:7px;overflow:hidden}.inputs,.results{padding:clamp(28px,4vw,48px)}.section-title{margin-bottom:30px;display:flex;align-items:center;gap:13px}.section-title>span{min-width:62px;height:25px;padding:0 9px;display:grid;place-items:center;background:#111;color:#fff;border-radius:99px;font-size:8px;font-weight:850;letter-spacing:.08em}.section-title strong,.section-title small{display:block}.section-title strong{font-size:17px;letter-spacing:-.025em}.section-title small{margin-top:5px;color:#888;font-size:9px;line-height:1.4}.inputs label{display:block;margin-top:18px;color:#414141;font-size:11px;font-weight:700;line-height:1.35}.field,.inputs select{width:100%;height:52px;margin-top:7px;border:1px solid #d2cfc9;background:#faf9f6;border-radius:3px}.field{padding:0 13px;display:flex;align-items:center}.field span{margin-right:7px;color:#999;font-size:11px}.field input{width:100%;height:100%;border:0;outline:0;background:transparent;color:#111;font-size:17px;font-weight:750}.field.suffix span{margin:0 0 0 7px}.inputs select{padding:0 36px 0 13px;color:#111;font-size:11px;font-weight:650}.toggle{min-height:59px;padding:11px 13px;display:grid!important;grid-template-columns:21px 1fr;align-items:center;column-gap:9px;border:1px solid #d2cfc9;background:#faf9f6;border-radius:3px;cursor:pointer}.toggle input{width:18px;height:18px;grid-row:1/3;accent-color:var(--red)}.toggle b{color:#222;font-size:11px}.toggle small{color:#999;font-size:9px;font-weight:500}.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}.notice{margin:20px 0 0;padding:12px 13px;background:#e4e1da;color:#747474;border-radius:3px;font-size:9px;line-height:1.5}
+    .calculator{margin-bottom:60px;display:grid;grid-template-columns:1fr 1fr;background:var(--paper);color:#111;border-radius:7px;overflow:hidden}.inputs,.results{padding:clamp(28px,4vw,48px)}.section-title{margin-bottom:30px;display:flex;align-items:center;gap:13px}.section-title>span{min-width:62px;height:25px;padding:0 9px;display:grid;place-items:center;background:#111;color:#fff;border-radius:99px;font-size:8px;font-weight:850;letter-spacing:.08em}.section-title strong,.section-title small{display:block}.section-title strong{font-size:17px;letter-spacing:-.025em}.section-title small{margin-top:5px;color:#888;font-size:9px;line-height:1.4}.inputs label{display:block;margin-top:18px;color:#414141;font-size:11px;font-weight:700;line-height:1.35}.field,.inputs select{width:100%;height:52px;margin-top:7px;border:1px solid #d2cfc9;background:#faf9f6;border-radius:3px}.field{padding:0 13px;display:flex;align-items:center}.field span{margin-right:7px;color:#999;font-size:11px}.field input{width:100%;height:100%;border:0;outline:0;background:transparent;color:#111;font-size:17px;font-weight:750;appearance:textfield;-moz-appearance:textfield}.field input::-webkit-inner-spin-button,.field input::-webkit-outer-spin-button{margin:0;-webkit-appearance:none}.field.suffix span{margin:0 0 0 7px}.inputs select{padding:0 36px 0 13px;color:#111;font-size:11px;font-weight:650}.toggle{min-height:59px;padding:11px 13px;display:grid!important;grid-template-columns:21px 1fr;align-items:center;column-gap:9px;border:1px solid #d2cfc9;background:#faf9f6;border-radius:3px;cursor:pointer}.toggle input{width:18px;height:18px;grid-row:1/3;accent-color:var(--red)}.toggle b{color:#222;font-size:11px}.toggle small{color:#999;font-size:9px;font-weight:500}.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field-help{margin-top:6px;display:block;color:#999;font-size:9px;font-weight:500;line-height:1.45}.promotion-preview{margin:9px 0 0;padding:13px;display:grid;gap:4px;background:#111;color:#fff;border-radius:7px}.promotion-preview span{color:#aaa;font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.promotion-preview strong{font-size:15px}.promotion-preview small{color:#8d8d8d;font-size:8px;font-weight:500;line-height:1.45}.inputs label.profit-goal{margin-top:22px;padding:16px;background:#fff1f1;border:1px solid #efb5b7;border-radius:9px;color:#171717;font-size:13px;font-weight:800}.profit-goal .field{height:58px;margin-top:9px;border-color:var(--red);background:#fff}.profit-goal .field span{color:var(--red);font-size:12px;font-weight:800}.profit-goal .field input{font-size:22px}.profit-goal .field-help{color:#7a6666}.notice{margin:20px 0 0;padding:12px 13px;background:#e4e1da;color:#747474;border-radius:3px;font-size:9px;line-height:1.5}.notice strong{color:#333}
     .results{background:var(--panel);color:#fff}.results .section-title>span{background:#fff;color:#111}.results .section-title small{color:#777}.main-result{padding:27px 0;border-top:1px solid #373737;border-bottom:1px solid #373737}.main-result>span{font-size:9px;font-weight:850;letter-spacing:.08em}.main-result>strong{margin:11px 0 6px;display:block;font-size:clamp(42px,4.5vw,64px);line-height:1;letter-spacing:-.06em}.main-result>small{color:#929292;font-size:10px}.fees{margin:7px 0 22px}.fees>div{min-height:43px;display:flex;align-items:center;justify-content:space-between;gap:15px;border-bottom:1px solid #303030;color:#929292;font-size:10px}.fees strong{color:#fff;font-variant-numeric:tabular-nums}.fees .total{min-height:58px;color:#fff;font-weight:800}.fees .total strong{color:#73db98;font-size:17px}.result-cta{min-height:82px;padding:14px 15px 14px 21px;display:flex;align-items:center;justify-content:space-between;gap:18px;background:var(--red);color:#fff;border:1px solid rgba(255,255,255,.15);border-radius:13px;text-decoration:none;box-shadow:0 12px 32px rgba(236,32,39,.24)}.result-cta:hover{background:#ff343b;transform:translateY(-1px)}.cta-copy{display:grid;gap:5px}.cta-copy strong{font-size:clamp(15px,1.35vw,18px);line-height:1.15;letter-spacing:-.025em}.cta-copy small{color:rgba(255,255,255,.75);font-size:11px;font-weight:550;line-height:1.35}.cta-arrow{width:42px;height:42px;display:grid;place-items:center;flex:0 0 42px;background:#111;border-radius:50%;color:#fff;font-size:18px;font-weight:500}
     .content-section{padding:70px 0;border-top:1px solid #292929}.heading{max-width:770px}.heading h2,.lead-cta h2{margin:12px 0 0;font-size:clamp(30px,4vw,48px);line-height:1;letter-spacing:-.05em}.heading p{color:#929292;font-size:14px;line-height:1.65}.rates{margin-top:28px;border:1px solid var(--line);border-radius:9px;overflow:hidden}.rates-row{min-height:62px;padding:0 21px;display:grid;grid-template-columns:1.2fr repeat(3,1fr);align-items:center;border-top:1px solid var(--line);color:#c6c6c6;font-size:13px}.rates-row:first-child{border-top:0}.rates-row.head{min-height:42px;background:#171717;color:#898989;font-size:9px;font-weight:800;letter-spacing:.09em}.rates-row strong{color:#fff}.footnote{margin-top:12px;display:block;color:#858585;font-size:10px;line-height:1.5}.comparison{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:14px}.comparison article,.guide-grid article{padding:29px;border:1px solid #292929;border-radius:12px;background:#121212}.comparison h3{margin:13px 0 10px;font-size:23px}.comparison p,.guide-grid p{margin:0;color:#9b9b9b;font-size:14px;line-height:1.65}
     .how{display:grid;grid-template-columns:.78fr 1.22fr;gap:70px}.how .heading>p{margin-top:18px}.steps{margin:0;padding:0;list-style:none}.steps li{min-height:85px;padding:18px 0;display:grid;grid-template-columns:34px 1fr;gap:15px;border-top:1px solid #292929}.steps b{width:30px;height:30px;display:grid;place-items:center;border-radius:50%;background:#191919;color:var(--red);font-size:9px}.steps strong{font-size:15px}.steps p{margin:6px 0 0;color:#909090;font-size:13px;line-height:1.6}.guide-grid{margin-top:32px;display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #292929;border-radius:10px;overflow:hidden}.guide-grid article{min-height:190px;padding:26px;border:0;border-left:1px solid #292929;border-radius:0}.guide-grid article:first-child{border-left:0}.guide-grid strong{font-size:16px}.guide-grid p{margin-top:13px;font-size:13px;color:#999}
     .faq{margin-top:32px;border-top:1px solid #303030}.faq details{border-bottom:1px solid #303030}.faq summary{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:25px;color:#e8e8e8;cursor:pointer;list-style:none;font-size:16px;font-weight:750}.faq summary::-webkit-details-marker{display:none}.faq summary span{color:var(--red);font-size:24px;font-weight:400;transition:transform .2s}.faq details[open] summary span{transform:rotate(45deg)}.faq p{max-width:820px;margin:-5px 0 26px;color:#9a9a9a;font-size:14px;line-height:1.7}
     .lead-cta{margin-top:25px;margin-bottom:75px;padding:clamp(28px,5vw,55px);display:grid;grid-template-columns:1fr 340px;gap:50px;align-items:end;background:#f1efe9;color:#111;border-radius:14px}.lead-cta p{max-width:690px;margin:16px 0 0;color:#626262;font-size:15px;line-height:1.65}.lead-cta>a{min-height:70px;padding:12px 14px 12px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;background:var(--red);color:#fff;border-radius:11px;text-decoration:none;font-size:15px;line-height:1.2;font-weight:850;box-shadow:0 15px 35px rgba(236,32,39,.2)}footer{padding:20px 0 28px;border-top:1px solid #292929;display:flex;justify-content:space-between;gap:20px;color:#555;font:9px monospace;letter-spacing:.08em}
-    @media(max-width:760px){.wrap{width:min(100% - 30px,560px)}.header{height:76px}.header nav{gap:14px}.header nav a:first-child{display:none}.hero{padding:45px 0 38px;grid-template-columns:1fr}.hero h1{font-size:39px}.hero p{font-size:14px}.stamp{display:none}.switcher{overflow-x:auto}.switcher a{white-space:nowrap}.calculator,.pair,.comparison,.how,.lead-cta{grid-template-columns:1fr}.inputs,.results{padding:27px 26px}.main-result>strong{font-size:48px}.result-cta{min-height:78px;padding:13px 13px 13px 17px}.cta-copy strong{font-size:15px}.cta-copy small{font-size:10px}.cta-arrow{width:40px;height:40px;flex-basis:40px}.rates-row{padding:14px 12px;grid-template-columns:1fr 1fr;row-gap:8px}.rates-row.head{display:none}.content-section{padding:52px 0}.heading p,.comparison p,.steps p,.guide-grid p,.faq p{font-size:13px}.comparison article{padding:23px}.comparison h3{font-size:21px}.how{gap:30px}.guide-grid{grid-template-columns:1fr}.guide-grid article{min-height:auto;border-left:0;border-top:1px solid #292929}.guide-grid article:first-child{border-top:0}.faq summary{min-height:78px;font-size:15px;line-height:1.35}.lead-cta{padding:30px 22px;gap:28px}.lead-cta p{font-size:14px}.lead-cta>a{width:100%;min-height:68px;font-size:14px}footer{font-size:7px}}
-    @media(max-width:390px){.hero h1{font-size:36px}.inputs,.results{padding:25px 18px}.section-title{align-items:flex-start}.pair{gap:0}.fees>div{font-size:9px}}
+    @media(max-width:760px){.wrap{width:min(100% - 24px,560px)}.header{height:72px}.header nav{gap:15px}.header nav a:first-child{display:none}.header nav a{font-size:11px}.hero{padding:38px 0 32px;grid-template-columns:1fr}.hero h1{margin:15px 0 17px;font-size:36px;line-height:1}.hero p{color:#aaa;font-size:15px;line-height:1.55}.stamp{display:none}.switcher{padding-bottom:3px;overflow-x:auto;scrollbar-width:none}.switcher::-webkit-scrollbar{display:none}.switcher a{min-height:46px;padding-inline:16px;white-space:nowrap;font-size:12px}.calculator{width:calc(100% - 20px);border-radius:14px}.calculator,.pair,.comparison,.how,.lead-cta{grid-template-columns:1fr}.inputs,.results{padding:27px 20px}.section-title{margin-bottom:22px;align-items:flex-start}.section-title strong{font-size:19px;line-height:1.15}.section-title small{font-size:11px}.inputs label,.pair label{margin-top:20px;font-size:13px}.field,.inputs select{height:58px;border-radius:8px}.inputs select{padding-inline:14px 36px;font-size:16px}.field input{font-size:19px}.field-help{margin-top:7px;font-size:11px}.toggle{min-height:70px;padding:13px;border-radius:8px}.toggle b{font-size:13px}.toggle small{font-size:10px}.promotion-preview{padding:15px;border-radius:9px}.promotion-preview span,.promotion-preview small{font-size:10px}.promotion-preview strong{font-size:17px}.inputs label.profit-goal{margin-top:24px;padding:17px;font-size:15px}.profit-goal .field{height:64px}.profit-goal .field input{font-size:25px}.profit-goal .field-help{font-size:11px}.notice{padding:14px;border-radius:8px;font-size:10px}.main-result{padding:25px 0}.main-result>span{font-size:10px}.main-result>strong{margin-top:13px;font-size:52px}.main-result>small{font-size:11px;line-height:1.4}.fees>div{min-height:49px;font-size:11px}.fees .total{min-height:64px}.fees .total strong{font-size:19px}.result-cta{min-height:86px;padding:14px 13px 14px 17px}.cta-copy strong{font-size:16px}.cta-copy small{font-size:11px}.cta-arrow{width:44px;height:44px;flex-basis:44px}.rates-row{padding:14px 12px;grid-template-columns:1fr 1fr;row-gap:8px}.rates-row.head{display:none}.content-section{padding:52px 0}.heading p,.comparison p,.steps p,.guide-grid p,.faq p{font-size:13px}.comparison article{padding:23px}.comparison h3{font-size:21px}.how{gap:30px}.guide-grid{grid-template-columns:1fr}.guide-grid article{min-height:auto;border-left:0;border-top:1px solid #292929}.guide-grid article:first-child{border-top:0}.faq summary{min-height:78px;font-size:15px;line-height:1.35}.lead-cta{padding:30px 22px;gap:28px}.lead-cta p{font-size:14px}.lead-cta>a{width:100%;min-height:72px;font-size:15px}footer{font-size:7px}}
     @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
   </style>
 </head>
@@ -65,34 +65,38 @@
 
   <main>
     <section class="hero wrap">
-      <div><span class="eyebrow">CALCULADORA IFOOD GRÁTIS PARA RESTAURANTES</span><h1>Calculadora de precificação iFood: <em>calcule o preço sem perder margem.</em></h1><p>Simule quanto cobrar no iFood considerando comissão, pagamento online, entrega e campanhas e entenda quanto realmente sobra para a sua loja.</p></div>
-      <div class="stamp"><strong id="totalRateBadge">15,2%</strong><span>taxas consideradas nesta simulação</span></div>
+      <div><span class="eyebrow">CALCULADORA IFOOD GRÁTIS PARA RESTAURANTES</span><h1>Calculadora de precificação iFood: <em>calcule o preço sem perder margem.</em></h1><p>Simule quanto cobrar no iFood considerando CMV, lucro desejado, comissão, pagamento online, entrega e promoções e entenda quanto realmente sobra para a sua loja.</p></div>
+      <div class="stamp"><strong id="totalRateBadge">15,2%</strong><span>taxas percentuais consideradas nesta simulação</span></div>
     </section>
 
     <nav class="switcher wrap" aria-label="Calculadoras da Gruppu"><a class="active" href="/calculadora/precificacao-ifood/">Preço ideal no iFood</a><a href="#como-calcular">Entenda a conta</a></nav>
 
     <section class="calculator wrap" aria-label="Calculadora de preço no iFood">
       <div class="inputs">
-        <div class="section-title"><span>DADOS</span><div><strong>Monte o cenário do produto</strong><small>Use o preço que já cobre seus custos e sua margem fora do app.</small></div></div>
-        <label for="basePrice">Preço-base do produto<div class="field"><span>R$</span><input id="basePrice" type="number" value="32" min="0" step="0.50" inputmode="decimal"></div></label>
-        <label for="plan">Plano contratado no iFood<select id="plan"><option value="12">Plano Básico — comissão padrão de 12%</option><option value="23">Plano Entrega — comissão padrão de 23%</option></select></label>
+        <div class="section-title"><span>DADOS</span><div><strong>Monte o cenário da sua venda</strong><small>Informe seus custos primeiro e escolha o lucro no final.</small></div></div>
+        <label for="productCost">Custo do produto (CMV)<div class="field"><span>R$</span><input id="productCost" type="number" value="5" min="0" step="0.50" inputmode="decimal"></div><small class="field-help">Ingredientes, embalagem e perdas para produzir uma unidade.</small></label>
+        <label for="plan">Plano contratado no iFood<select id="plan"><option value="12">Plano Básico — 12% de comissão</option><option value="23">Plano Entrega — 23% de comissão</option></select></label>
         <label class="toggle" for="onlinePayment"><input id="onlinePayment" type="checkbox" checked><b>Pagamento feito pelo iFood</b><small>Inclui a taxa padrão de 3,2%</small></label>
+        <label for="promotion">Promoções do iFood<select id="promotion"><option value="none">Nenhuma promoção</option><option value="smart">Campanha Inteligente — R$ 5 por pedido</option><option value="coupon10">Cupom de R$ 10 bancado pela loja</option><option value="coupon20">Cupom de R$ 20 bancado pela loja</option><option value="freeDelivery">Campanha com entrega grátis — até R$ 9,99</option><option value="percent">Desconto em item — informar percentual</option><option value="customFixed">Outro valor por pedido — informar em reais</option></select><small class="field-help">Escolha a promoção. O custo conhecido entra automaticamente na conta.</small></label>
+        <p class="promotion-preview" id="promotionPreview" hidden><span>VALOR USADO NA SIMULAÇÃO</span><strong id="promotionPreviewValue">R$ 0,00 por pedido</strong><small>Valor de referência. Se o Portal mostrar outro custo, escolha “Outro valor por pedido”.</small></p>
         <div class="pair">
-          <label for="deliveryCost">Custo médio de entrega<div class="field"><span>R$</span><input id="deliveryCost" type="number" value="0" min="0" step="0.50" inputmode="decimal"></div></label>
-          <label for="campaign">Campanhas sobre a venda<div class="field suffix"><input id="campaign" type="number" value="0" min="0" max="50" step="0.50" inputmode="decimal"><span>%</span></div></label>
+          <label for="deliveryCost">Entrega paga pela loja<div class="field"><span>R$</span><input id="deliveryCost" type="number" value="0" min="0" step="0.50" inputmode="decimal"></div><small class="field-help">Se não existe custo adicional por pedido, deixe zero.</small></label>
+          <label for="promotionValue" id="promotionValueLabel" hidden><span id="promotionValueTitle">Investimento por pedido</span><div class="field" id="promotionValueField"><span id="promotionPrefix">R$</span><input id="promotionValue" type="number" value="0" min="0" step="0.50" inputmode="decimal"><span id="promotionSuffix" hidden>%</span></div><small class="field-help">Confira o custo efetivo no Portal do Parceiro.</small></label>
         </div>
-        <p class="notice">As taxas podem variar por contrato, região e modalidade. Confira os números finais no Portal do Parceiro.</p>
+        <label class="profit-goal" for="desiredProfit">Quanto você quer lucrar nesta venda?<div class="field"><span>R$</span><input id="desiredProfit" type="number" value="10" min="0" step="0.50" inputmode="decimal"></div><small class="field-help">Digite o valor que deve sobrar depois do CMV, taxas, entrega e promoção.</small></label>
+        <p class="notice"><strong>Anúncios ficam fora desta conta.</strong> Eles são um investimento por visita ao cardápio, e não um desconto obrigatório em cada pedido. Taxas e promoções podem variar; confirme os valores no Portal do Parceiro.</p>
       </div>
 
       <div class="results" aria-live="polite">
-        <div class="section-title"><span>PREÇO</span><div><strong>Preço recomendado no app</strong><small>Para preservar aproximadamente o valor-base informado.</small></div></div>
-        <div class="main-result"><span>PREÇO DE VENDA SUGERIDO</span><strong id="recommended">R$ 37,74</strong><small>valor líquido estimado: <span id="netTop">R$ 32,00</span></small></div>
+        <div class="section-title"><span>PREÇO</span><div><strong>Preço recomendado no app</strong><small>Para pagar os custos e preservar o lucro informado.</small></div></div>
+        <div class="main-result"><span>PREÇO DE VENDA SUGERIDO</span><strong id="recommended">R$ 17,69</strong><small>lucro estimado depois de todos os custos: <span id="profitTop">R$ 10,00</span></small></div>
         <div class="fees">
-          <div><span id="commissionLabel">Comissão do plano (12%)</span><strong id="commission">- R$ 4,53</strong></div>
-          <div><span id="paymentLabel">Pagamento online (3,2%)</span><strong id="payment">- R$ 1,21</strong></div>
-          <div><span id="campaignLabel">Campanhas (0,0%)</span><strong id="campaignValue">- R$ 0,00</strong></div>
-          <div id="deliveryRow" hidden><span>Entrega média</span><strong id="deliveryValue">- R$ 0,00</strong></div>
-          <div class="total"><span>Você recebe após esses custos</span><strong id="net">R$ 32,00</strong></div>
+          <div><span id="commissionLabel">Comissão do plano (12,0%)</span><strong id="commission">- R$ 2,12</strong></div>
+          <div><span id="paymentLabel">Pagamento online (3,2%)</span><strong id="payment">- R$ 0,57</strong></div>
+          <div id="campaignRow" hidden><span id="campaignLabel">Promoção</span><strong id="campaignCost">- R$ 0,00</strong></div>
+          <div id="deliveryRow" hidden><span>Entrega paga pela loja</span><strong id="deliveryValue">- R$ 0,00</strong></div>
+          <div><span>Custo do produto (CMV)</span><strong id="productCostValue">- R$ 5,00</strong></div>
+          <div class="total"><span>Lucro que sobra nesta venda</span><strong id="profit">R$ 10,00</strong></div>
         </div>
         <a class="result-cta" href="/captura/?origem=calculadora-precificacao#cadastro"><span class="cta-copy"><strong>Quero analisar minha loja grátis</strong><small>Receber uma análise ao vivo da Gruppu</small></span><span class="cta-arrow" aria-hidden="true">↗</span></a>
       </div>
@@ -110,22 +114,23 @@
     </section>
 
     <section class="content-section how wrap" id="como-calcular">
-      <div class="heading"><span class="section-label">COMO CALCULAR</span><h2>Como calcular o preço de venda no iFood sem esconder prejuízo.</h2><p>A calculadora ajuda a compensar as taxas do canal, mas o preço-base precisa nascer de uma operação bem medida.</p></div>
-      <ol class="steps"><li><b>1</b><div><strong>Comece pela ficha técnica</strong><p>Some ingredientes, perdas e embalagem para conhecer o custo real de cada produto.</p></div></li><li><b>2</b><div><strong>Inclua as taxas do canal</strong><p>Considere comissão, pagamento online, campanhas, cupons e o custo médio de entrega.</p></div></li><li><b>3</b><div><strong>Proteja sua margem de lucro</strong><p>Separe CMV de impostos, mão de obra, aluguel e demais despesas que afetam o resultado.</p></div></li><li><b>4</b><div><strong>Valide o preço no mercado</strong><p>Compare concorrentes, posicionamento e percepção de valor antes de publicar no cardápio.</p></div></li></ol>
+      <div class="heading"><span class="section-label">COMO CALCULAR</span><h2>Como calcular o preço de venda no iFood sem esconder prejuízo.</h2><p>A calculadora separa o dinheiro que paga o produto do dinheiro que realmente vira lucro.</p></div>
+      <ol class="steps"><li><b>1</b><div><strong>Informe o CMV do produto</strong><p>Some ingredientes, embalagem e perdas para saber quanto custa produzir uma unidade.</p></div></li><li><b>2</b><div><strong>Monte o cenário da venda</strong><p>Escolha plano, pagamento online, entrega e a promoção bancada pela loja.</p></div></li><li><b>3</b><div><strong>Escolha o lucro desejado</strong><p>Digite quanto você quer que sobre depois de todos os descontos calculados.</p></div></li><li><b>4</b><div><strong>Valide o preço no mercado</strong><p>Compare concorrentes, posicionamento e percepção de valor antes de publicar no cardápio.</p></div></li></ol>
     </section>
 
     <section class="content-section wrap">
       <div class="heading"><span class="section-label">GUIA RÁPIDO</span><h2>O que informar na calculadora de precificação iFood</h2><p>Cada campo responde a uma parte diferente do preço. Preencher com dados reais deixa a simulação mais próxima da sua operação.</p></div>
-      <div class="guide-grid"><article><strong>Preço-base</strong><p>É o valor que já cobre custos e margem fora do aplicativo. Não use apenas o custo dos ingredientes.</p></article><article><strong>Plano contratado</strong><p>Escolha Básico ou Entrega para aplicar a comissão de referência correspondente.</p></article><article><strong>Pagamento online</strong><p>Ative quando o pedido for pago dentro do app, pois existe uma taxa específica de processamento.</p></article><article><strong>Campanhas e entrega</strong><p>Informe quanto sua loja realmente assume em promoções e logística para não diluir a margem sem perceber.</p></article></div>
+      <div class="guide-grid"><article><strong>Custo do produto (CMV)</strong><p>É o custo de ingredientes, embalagem e perdas para produzir uma unidade. Ele não é o seu lucro.</p></article><article><strong>Lucro desejado</strong><p>É o valor em reais que você quer que sobre depois do CMV, das taxas e dos demais custos informados.</p></article><article><strong>Plano e pagamento</strong><p>Escolha seu plano e indique se o pedido é pago no app para aplicar os percentuais de referência.</p></article><article><strong>Promoções e entrega</strong><p>Informe somente o valor que sua loja realmente assume naquele pedido.</p></article></div>
     </section>
 
     <section class="content-section wrap">
       <div class="heading"><span class="section-label">DÚVIDAS FREQUENTES</span><h2>Perguntas sobre preço, taxas e lucro no iFood</h2><p>Respostas diretas para donos de restaurantes, hamburguerias, pizzarias, marmitarias e outras operações de delivery.</p></div>
       <div class="faq">
-        <details><summary>Como calcular o preço de venda no iFood?<span>+</span></summary><p>Comece pelo preço que já cobre o custo do produto e a margem desejada. Depois, acrescente comissão do plano, taxa de pagamento online, participação em campanhas e eventuais custos de entrega. A calculadora faz essa compensação automaticamente.</p></details>
+        <details><summary>Como calcular o preço de venda no iFood?<span>+</span></summary><p>Informe separadamente o custo do produto (CMV) e quanto deseja lucrar. Depois, selecione as taxas, a entrega e a promoção. A calculadora encontra o preço necessário para que o lucro desejado continue sobrando.</p></details>
         <details><summary>Quanto o iFood cobra do restaurante?<span>+</span></summary><p>As páginas oficiais do iFood apresentam como referência comissão de 12% no Plano Básico e 23% no Plano Entrega, além de 3,2% para pagamentos processados no aplicativo. As condições podem variar por contrato, região e modalidade.</p></details>
         <details><summary>Posso vender mais caro no iFood do que no balcão?<span>+</span></summary><p>O preço no aplicativo pode precisar ser diferente para absorver custos específicos do canal, mas também deve ser competitivo e coerente com a percepção de valor do cliente. Simule primeiro e valide o resultado no mercado.</p></details>
-        <details><summary>A calculadora inclui comissão, pagamento online e promoções?<span>+</span></summary><p>Sim. Você escolhe o plano, ativa ou desativa o pagamento online, informa o custo médio de entrega e adiciona o percentual de campanhas que incide sobre a venda.</p></details>
+        <details><summary>A calculadora inclui comissão, pagamento online e promoções?<span>+</span></summary><p>Sim. Você escolhe o plano, ativa ou desativa o pagamento online, informa quanto a loja paga de entrega e seleciona a promoção do iFood ou um custo personalizado.</p></details>
+        <details><summary>Como informar Campanha Inteligente, cupom e iFood Anúncios?<span>+</span></summary><p>Escolha a promoção e use o custo que sua loja realmente banca por pedido. O iFood Anúncios é um investimento por visita ao cardápio e deve ser analisado separadamente.</p></details>
         <details><summary>Como saber se estou tendo lucro no iFood?<span>+</span></summary><p>Compare o valor líquido estimado com o custo completo do pedido: ingredientes, embalagem, impostos, mão de obra e despesas da operação. Faturamento alto não garante lucro quando esses custos não estão mapeados.</p></details>
         <details><summary>Esta calculadora substitui as taxas do meu contrato?<span>+</span></summary><p>Não. Ela é uma ferramenta educativa baseada em referências públicas. Para tomar a decisão final, confira as taxas, mensalidades e regras vigentes no Portal do Parceiro e no contrato da sua loja.</p></details>
       </div>
@@ -137,40 +142,59 @@
   <footer class="wrap"><span>GRUPPU — GESTÃO ESTRATÉGICA IFOOD</span><span>Ferramenta educativa; confirme as taxas no seu contrato.</span></footer>
 
   <script>
-    const ids=["basePrice","plan","onlinePayment","deliveryCost","campaign"];
+    const ids=["productCost","desiredProfit","plan","onlinePayment","deliveryCost","promotion","promotionValue"];
     const elements=Object.fromEntries(ids.map(id=>[id,document.getElementById(id)]));
     const brl=new Intl.NumberFormat("pt-BR",{style:"currency",currency:"BRL",minimumFractionDigits:2});
     const number=value=>Math.max(0,Number(value)||0);
     const percent=value=>number(value).toLocaleString("pt-BR",{minimumFractionDigits:1,maximumFractionDigits:1})+"%";
+    const fixedPromotion={smart:5,coupon10:10,coupon20:20,freeDelivery:9.99};
+    const promotionNames={smart:"Campanha Inteligente",coupon10:"Cupom de R$ 10",coupon20:"Cupom de R$ 20",freeDelivery:"Campanha com entrega grátis",customFixed:"Outro investimento por pedido"};
 
     function calculate(){
-      const base=number(elements.basePrice.value);
+      const cost=number(elements.productCost.value);
+      const desiredProfit=number(elements.desiredProfit.value);
       const rate=number(elements.plan.value);
       const paymentRate=elements.onlinePayment.checked?3.2:0;
       const delivery=number(elements.deliveryCost.value);
-      const campaign=Math.min(number(elements.campaign.value),50);
-      const totalRate=Math.min(rate+paymentRate+campaign,90);
-      const recommended=(base+delivery)/(1-totalRate/100);
+      const promotion=elements.promotion.value;
+      const customValue=number(elements.promotionValue.value);
+      const campaignPercent=promotion==="percent"?Math.min(customValue,50):0;
+      const campaignFixed=promotion==="customFixed"?customValue:(fixedPromotion[promotion]||0);
+      const totalRate=Math.min(rate+paymentRate+campaignPercent,90);
+      const recommended=(cost+desiredProfit+delivery+campaignFixed)/(1-totalRate/100);
       const commission=recommended*rate/100;
       const payment=recommended*paymentRate/100;
-      const campaignCost=recommended*campaign/100;
-      const net=recommended-commission-payment-campaignCost-delivery;
+      const campaignCost=promotion==="percent"?recommended*campaignPercent/100:campaignFixed;
+      const profit=recommended-commission-payment-campaignCost-delivery-cost;
+      const presetPromotion=Object.hasOwn(fixedPromotion,promotion);
+      const needsValue=promotion==="percent"||promotion==="customFixed";
+
+      document.getElementById("promotionPreview").hidden=!presetPromotion;
+      document.getElementById("promotionPreviewValue").textContent=`${brl.format(campaignCost)} por pedido`;
+      document.getElementById("promotionValueLabel").hidden=!needsValue;
+      document.getElementById("promotionValueTitle").textContent=promotion==="percent"?"Percentual bancado pela loja":"Investimento por pedido";
+      document.getElementById("promotionPrefix").hidden=promotion==="percent";
+      document.getElementById("promotionSuffix").hidden=promotion!=="percent";
+      document.getElementById("promotionValueField").classList.toggle("suffix",promotion==="percent");
+      elements.promotionValue.max=promotion==="percent"?"50":"";
 
       document.getElementById("totalRateBadge").textContent=percent(totalRate);
       document.getElementById("recommended").textContent=brl.format(recommended);
-      document.getElementById("netTop").textContent=brl.format(net);
+      document.getElementById("profitTop").textContent=brl.format(profit);
       document.getElementById("commissionLabel").textContent=`Comissão do plano (${percent(rate)})`;
       document.getElementById("commission").textContent=`- ${brl.format(commission)}`;
       document.getElementById("paymentLabel").textContent=`Pagamento online (${percent(paymentRate)})`;
       document.getElementById("payment").textContent=`- ${brl.format(payment)}`;
-      document.getElementById("campaignLabel").textContent=`Campanhas (${percent(campaign)})`;
-      document.getElementById("campaignValue").textContent=`- ${brl.format(campaignCost)}`;
+      document.getElementById("campaignRow").hidden=promotion==="none";
+      document.getElementById("campaignLabel").textContent=promotion==="percent"?`Desconto em item (${percent(campaignPercent)})`:(promotionNames[promotion]||"Promoção");
+      document.getElementById("campaignCost").textContent=`- ${brl.format(campaignCost)}`;
       document.getElementById("deliveryRow").hidden=delivery<=0;
       document.getElementById("deliveryValue").textContent=`- ${brl.format(delivery)}`;
-      document.getElementById("net").textContent=brl.format(net);
+      document.getElementById("productCostValue").textContent=`- ${brl.format(cost)}`;
+      document.getElementById("profit").textContent=brl.format(profit);
     }
 
-    ids.forEach(id=>elements[id].addEventListener(id==="plan"||id==="onlinePayment"?"change":"input",calculate));
+    ids.forEach(id=>elements[id].addEventListener(id==="plan"||id==="onlinePayment"||id==="promotion"?"change":"input",calculate));
     calculate();
   </script>
 </body>
