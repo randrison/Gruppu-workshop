@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "tar -xzf gruppu-platform-source.tgz && npm install --no-audit --no-fund && npx next build --webpack"
+    "build": "tar -xzf gruppu-platform-v2.tgz && npm install --no-audit --no-fund && npx next build --webpack"
   },
   "dependencies": {
     "next": "16.2.6",
