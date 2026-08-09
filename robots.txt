@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /app/
+Disallow: /login
+Disallow: /api/
 
 Sitemap: https://gruppu.com.br/sitemap.xml
