@@ -1,4 +1,7 @@
 {
+  "redirects": [
+    { "source": "/calculadora/precificacao-ifood/", "destination": "/calculadora/precificacao-ifood", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/blog", "destination": "https://gruppu-plataforma.vercel.app/blog" },
     { "source": "/blog/:path*", "destination": "https://gruppu-plataforma.vercel.app/blog/:path*" },
