@@ -57,7 +57,7 @@ src="https://www.facebook.com/tr?id=1002113512276303&ev=PageView&noscript=1"
       "addressCountry": "BR"
     },
     "taxID": "55.404.170/0001-23",
-    "sameAs": ["https://www.instagram.com/gruppu_/"]
+    "sameAs": ["https://www.instagram.com/gruppu_/", "https://www.youtube.com/@Gruppu"]
   }
   </script>
 
@@ -403,6 +403,104 @@ src="https://www.facebook.com/tr?id=1002113512276303&ev=PageView&noscript=1"
         font-size: 22px;
       }
     }
+
+    .about-strip {
+      padding: 50px 20px 64px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .about-strip-inner {
+      max-width: 620px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .about-strip-eyebrow {
+      display: inline-flex;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: rgba(255, 111, 0, 0.10);
+      border: 1px solid rgba(255, 132, 45, 0.34);
+      color: #ff8b38;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .about-strip-lead {
+      color: #fff;
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.5;
+      letter-spacing: -.2px;
+      margin: 0 0 10px;
+    }
+
+    .about-strip-body {
+      color: #9a9ea5;
+      font-size: 14px;
+      line-height: 1.65;
+      margin: 0 0 28px;
+    }
+
+    .about-strip-stats {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .about-strip-stats div {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .about-strip-stats strong {
+      color: #fff;
+      font-size: 19px;
+      font-weight: 900;
+      letter-spacing: -.3px;
+    }
+
+    .about-strip-stats span {
+      color: #777c85;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+    }
+
+    .about-strip-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .about-strip-links a {
+      color: #d9dde4;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .about-strip-links a:hover {
+      color: #ff8b38;
+    }
+
+    @media (max-width: 520px) {
+      .about-strip-stats {
+        gap: 20px;
+      }
+      .about-strip-links {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
   </style>
 </head>
 
@@ -493,6 +591,24 @@ src="https://www.facebook.com/tr?id=1002113512276303&ev=PageView&noscript=1"
       </div>
     </section>
   </main>
+
+  <section class="about-strip">
+    <div class="about-strip-inner">
+      <span class="about-strip-eyebrow">Quem é a Gruppu</span>
+      <p class="about-strip-lead">A Gruppu é uma empresa brasileira especializada em gestão estratégica para restaurantes e operações de delivery no iFood.</p>
+      <p class="about-strip-body">Cuidamos do cardápio, da precificação, das promoções e das métricas da sua loja no iFood — sempre com foco em vender mais sem depender só de desconto e crescer de forma sustentável dentro do aplicativo.</p>
+      <div class="about-strip-stats">
+        <div><strong>+370</strong><span>lojas atendidas</span></div>
+        <div><strong>+R$4 mi</strong><span>em vendas geradas</span></div>
+        <div><strong>Clientes</strong><span>em todo o Brasil</span></div>
+      </div>
+      <nav class="about-strip-links" aria-label="Saiba mais sobre a Gruppu">
+        <a href="/gestao-de-ifood">Conheça a gestão de iFood →</a>
+        <a href="/sobre">Sobre a Gruppu →</a>
+        <a href="/cases">Veja resultados reais →</a>
+      </nav>
+    </div>
+  </section>
 <script>
   const googleSheetsUrl = "https://script.google.com/macros/s/AKfycby-Vf5wD8iUgVH53BeMFNVAJF8DBtcFc3OZme6HkORIHtuObx-Fz6MY-Hw5T_TnxeDG/exec";
   const whatsappGroupLink = "https://chat.whatsapp.com/F6GtaJebpu8CUZKKskTR07";
