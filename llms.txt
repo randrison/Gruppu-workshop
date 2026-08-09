@@ -4,6 +4,10 @@
 
 ## Páginas principais
 
+- [Gestão de iFood](https://gruppu.com.br/gestao-de-ifood): página central sobre o serviço — o que é gestão de iFood, o que faz um gestor/consultor/especialista em iFood, como funciona o trabalho da Gruppu.
+- [Sobre a Gruppu](https://gruppu.com.br/sobre): quem é a Gruppu, o que faz, história, resultados e dados da empresa.
+- [Cases](https://gruppu.com.br/cases): vídeos reais de restaurantes, pizzarias e hamburguerias atendidos pela Gruppu.
+- [Gestor de iFood ou fazer sozinho](https://gruppu.com.br/gestor-de-ifood-ou-fazer-sozinho): comparativo imparcial entre gerenciar a loja sozinho ou contratar gestão especializada.
 - [Análise ao vivo](https://gruppu.com.br/captura): página de captação — cadastro gratuito para participar da análise ao vivo da Gruppu.
 - [Calculadora de precificação iFood](https://gruppu.com.br/calculadora/precificacao-ifood): ferramenta gratuita que calcula o preço ideal de venda no iFood considerando CMV, comissão, promoções e lucro desejado.
 - [Blog](https://gruppu.com.br/blog): artigos práticos sobre cardápio, vendas, ticket médio, métricas, fotos e promoções para lojas no iFood.
